@@ -40,8 +40,19 @@ void TriangleArea()
 }
 void doSelectedTask(int selectedOption)
 {
-
-	if (selectedOption == 1)
+	switch (selectedOption)
+	{
+	case1:
+		SquareArea();
+		break;
+	case2:
+		TriangleArea();
+		break;
+	default:
+		std::cout << "Brak opcji w menu\n";
+		break;
+	}
+		/*if (selectedOption == 1)
 	{
 		SquareArea();
 	}
@@ -49,7 +60,9 @@ void doSelectedTask(int selectedOption)
 	{
 		TriangleArea();
 	}
+	*/
 }
+
 
 void mainProgram()
 {
@@ -61,6 +74,7 @@ void mainProgram()
 
 	//3. Wykonanie wybranego zadania
 	doSelectedTask(selected);
+	
 }
 
 void main()
