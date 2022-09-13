@@ -6,6 +6,7 @@ void showMenu()
 	std::cout << "Menu:\n";
 	std::cout << "1. Pole kwadratu\n";
 	std::cout << "2. Pole trojkata\n";
+	std::cout << "0. Zamknij program\n";
 }
 
 int chooseOptionFromUser()
@@ -42,17 +43,22 @@ void doSelectedTask(int selectedOption)
 {
 	switch (selectedOption)
 	{
-	case1:
+	 case 1:
 		SquareArea();
 		break;
-	case2:
+	 case 2:
 		TriangleArea();
 		break;
-	default:
-		std::cout << "Brak opcji w menu\n";
-		break;
+	 case 0:
+		return;
+	 default:
+		std::cout << "Brak opcji w menu\n"; \
+			break;
 	}
-		/*if (selectedOption == 1)
+	
+	system("pause");
+	
+	/*if (selectedOption == 1)
 	{
 		SquareArea();
 	}
@@ -66,15 +72,17 @@ void doSelectedTask(int selectedOption)
 
 void mainProgram()
 {
-	//1. wyœwietlenie menu
-	showMenu();
+	int selected;
+	do
+	{//1. wyœwietlenie menu
+		showMenu();
 
-	//2. wybranie opcji przez u¿ytkownika
-	int selected = chooseOptionFromUser();
+		//2. wybranie opcji przez u¿ytkownika
+		selected = chooseOptionFromUser();
 
-	//3. Wykonanie wybranego zadania
-	doSelectedTask(selected);
-	
+		//3. Wykonanie wybranego zadania
+		doSelectedTask(selected);
+	} while(selected != 0);
 }
 
 void main()
