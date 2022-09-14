@@ -6,6 +6,7 @@ void showMenu()
 	std::cout << "Menu:\n";
 	std::cout << "1. Pole kwadratu\n";
 	std::cout << "2. Pole trojkata\n";
+	std::cout << "3. Liczby nieparzyste\n";
 	std::cout << "0. Zamknij program\n";
 }
 
@@ -18,6 +19,7 @@ int chooseOptionFromUser()
 }
 void SquareArea()
 {
+	system("cls");
 	std::cout << "Podaj wartosc boku kwadratu:\n ";
 		int side;
 		std::cin >> side;
@@ -28,17 +30,34 @@ void SquareArea()
 }
 void TriangleArea()
 {
+	system("cls");
 	std::cout << "Podaj wartosc boku trojkata:\n ";
 	int side;
 	std::cin >> side;
-	std::cout << "Podaj wartosc wysokosci trojkata";
+	std::cout << "Podaj wartosc wysokosci trojkata:\n";
 	int height;
 	std::cin >> height;
 	int area = side * height / 2;
-	std::cout << "Pole kwadratu to " << area << '\n';
+	std::cout << "Pole trojkata to " << area << '\n';
+
 
 
 }
+void Non()
+{
+	system("cls");
+	std::cout << "Podaj liczbe: \n";
+    int number;
+	std::cin >> number;
+	
+	for (int i= number; i >= 0; i--)
+	{
+		if (i % 2 != 0)
+		std::cout << i << " , ";
+		 
+	}
+	
+} 
 void doSelectedTask(int selectedOption)
 {
 	switch (selectedOption)
@@ -49,7 +68,10 @@ void doSelectedTask(int selectedOption)
 	 case 2:
 		TriangleArea();
 		break;
-	 case 0:
+	 case 3:
+		 Non();
+		 break;
+     case 0:
 		return;
 	 default:
 		std::cout << "Brak opcji w menu\n"; \
