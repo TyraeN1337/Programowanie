@@ -7,6 +7,8 @@ void showMenu()
 	std::cout << "1. Pole kwadratu\n";
 	std::cout << "2. Pole trojkata\n";
 	std::cout << "3. Liczby nieparzyste\n";
+	std::cout << "4. Dzielniki\n";
+	std::cout << "5. Fibonnacci\n";
 	std::cout << "0. Zamknij program\n";
 }
 
@@ -56,8 +58,45 @@ void Non()
 		std::cout << i << " , ";
 		 
 	}
-	
+	std::cout << '\n';
 } 
+void i24()
+{
+	system("cls");
+	std::cout << "Podaj liczbe: \n";
+	int number;
+	std::cin >> number;
+
+	for (int i = 1; i <= number /2; i++)
+	{
+		if (number % i == 0)
+			std::cout << i << " , ";
+	}
+	std::cout << number << '\n';
+
+	std::cout << '\n';
+
+}
+void ficiu()
+{
+	std::cout << "Podaj liczbe liczb ciagu fibonaciego:\n";
+	int number;
+
+	std::cin >> number;
+	int currentFibonacciNumber = 0;
+	int PrevOneFibonacciNumber = 0;
+    int prevTwoFibonacciNumber = 1;
+	for (int i = 0; i < number; i++)
+	{
+		currentFibonacciNumber = PrevOneFibonacciNumber + prevTwoFibonacciNumber;
+		std::cout << currentFibonacciNumber << ", ";
+
+		prevTwoFibonacciNumber = PrevOneFibonacciNumber;
+		PrevOneFibonacciNumber = currentFibonacciNumber;
+	}
+	std::cout << '\n';
+
+}
 void doSelectedTask(int selectedOption)
 {
 	switch (selectedOption)
@@ -70,6 +109,12 @@ void doSelectedTask(int selectedOption)
 		break;
 	 case 3:
 		 Non();
+		 break;
+	 case 4:
+		 i24();
+		 break;
+	 case 5:
+		 ficiu();
 		 break;
      case 0:
 		return;
