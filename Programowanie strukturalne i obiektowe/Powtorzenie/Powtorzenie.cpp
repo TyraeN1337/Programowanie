@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 void showMenu()
 {
@@ -9,6 +10,7 @@ void showMenu()
 	std::cout << "3. Liczby nieparzyste\n";
 	std::cout << "4. Dzielniki\n";
 	std::cout << "5. Fibonnacci\n";
+	cout << "6. Liczby slowne\n";
 	std::cout << "0. Zamknij program\n";
 }
 
@@ -97,6 +99,19 @@ void ficiu()
 	std::cout << '\n';
 
 }
+void NumberToWords()
+{
+	cout << "Podaj liczbe do przetworzenia slownie: \n";
+	int number;
+	cin >> number;
+
+	do
+	{
+		int digit = number % 10;
+		number = number / 10;
+
+	} while (number != 0);
+}
 void doSelectedTask(int selectedOption)
 {
 	switch (selectedOption)
@@ -115,6 +130,9 @@ void doSelectedTask(int selectedOption)
 		 break;
 	 case 5:
 		 ficiu();
+		 break;
+	 case 6:
+		 NumberToWords();
 		 break;
      case 0:
 		return;
@@ -152,7 +170,7 @@ void mainProgram()
 	} while(selected != 0);
 }
 
-void main()
+int main()
 {
 	mainProgram();
 }
