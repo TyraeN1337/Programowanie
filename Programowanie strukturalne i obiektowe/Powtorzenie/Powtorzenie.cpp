@@ -81,6 +81,7 @@ void i24()
 }
 void ficiu()
 {
+	system("cls");
 	std::cout << "Podaj liczbe liczb ciagu fibonaciego:\n";
 	int number;
 
@@ -101,17 +102,35 @@ void ficiu()
 }
 void NumberToWords()
 {
+	system("cls");
+	string arrayofWordsNumbers[10] = { "zero",  "jeden",  "dwa", "trzy","cztery","piec","szesc","siedem","osiem","dziewiec" };
 	cout << "Podaj liczbe do przetworzenia slownie: \n";
-	int number;
-	cin >> number;
+	int numberFromUser;
+	cin >> numberFromUser;
 
+	int number = numberFromUser;
+	
 	do
 	{
 		int digit = number % 10;
 		number = number / 10;
 
+		cout << arrayofWordsNumbers[digit] << "   ";
 	} while (number != 0);
+	cout << '\n';
+	number = numberFromUser;
+	string stringnumber = "";
+	do
+	{
+		int digit = number % 10;
+		number = number / 10;
+
+		stringnumber = arrayofWordsNumbers[digit] + "  " + stringnumber;
+	} while (number != 0);
+	cout << stringnumber;
+	cout << '\n';
 }
+
 void doSelectedTask(int selectedOption)
 {
 	switch (selectedOption)
