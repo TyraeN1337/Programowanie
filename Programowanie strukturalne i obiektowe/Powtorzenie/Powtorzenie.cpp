@@ -11,6 +11,7 @@ void showMenu()
 	std::cout << "4. Dzielniki\n";
 	std::cout << "5. Fibonnacci\n";
 	cout << "6. Liczby slowne\n";
+	cout << "7. Liczby binnarne\n";
 	std::cout << "0. Zamknij program\n";
 }
 
@@ -130,6 +131,21 @@ void NumberToWords()
 	cout << stringnumber;
 	cout << '\n';
 }
+void FromNumberToBinnar()
+{
+	system("cls");
+	std::cout << "Podaj liczbe: \n";
+	int number;
+	std::cin >> number;
+   
+
+	   do
+	   {
+
+
+
+	   } while ();
+}
 
 void doSelectedTask(int selectedOption)
 {
@@ -152,6 +168,9 @@ void doSelectedTask(int selectedOption)
 		 break;
 	 case 6:
 		 NumberToWords();
+		 break;
+	 case 7:
+		 FromNumberToBinnar();
 		 break;
      case 0:
 		return;
