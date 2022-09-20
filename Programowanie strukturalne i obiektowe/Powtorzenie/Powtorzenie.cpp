@@ -137,7 +137,7 @@ void FromNumberToBinnar()
 	std::cout << "Podaj liczbe: \n";
 	int number;
 	std::cin >> number;
-   dad
+    
 
 	   do
 	   {
