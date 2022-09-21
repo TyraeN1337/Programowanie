@@ -134,17 +134,20 @@ void NumberToWords()
 void FromNumberToBinnar()
 {
 	system("cls");
-	std::cout << "Podaj liczbe: \n";
 	int number;
-	std::cin >> number;
-    
+	std::cout << "Podaj liczbe: \n";
+	cin >> number;
+	
+	int i = 0, tab[31];
+	while (number)
+	{
+		tab[i++] = number % 2; 
+			number /= 2;
+	}
+	for (int a = i - 1; a >= 0; a--)
+		cout << tab[a];
+		cout << "\n";
 
-	   do
-	   {
-
-
-
-	   } while ();
 }
 
 void doSelectedTask(int selectedOption)
