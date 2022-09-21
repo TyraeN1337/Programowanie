@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 using namespace std;
 
 void showMenu()
@@ -12,6 +12,7 @@ void showMenu()
 	std::cout << "5. Fibonnacci\n";
 	cout << "6. Liczby slowne\n";
 	cout << "7. Liczby binnarne\n";
+	cout << "8. Liczby Heskadecymalne\n";
 	std::cout << "0. Zamknij program\n";
 }
 
@@ -142,13 +143,28 @@ void FromNumberToBinnar()
 	while (number)
 	{
 		tab[i++] = number % 2; 
-			number /= 2;
+		number /= 2;
 	}
 	for (int a = i - 1; a >= 0; a--)
 		cout << tab[a];
 		cout << "\n";
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void doSelectedTask(int selectedOption)
 {
@@ -174,6 +190,9 @@ void doSelectedTask(int selectedOption)
 		 break;
 	 case 7:
 		 FromNumberToBinnar();
+		 break;
+	 case 8:
+		 
 		 break;
      case 0:
 		return;
