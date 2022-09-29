@@ -145,13 +145,21 @@ void FromNumberToBinnar()
 		tab[i++] = number % 2; 
 		number /= 2;
 	}
-	for (int a = i - 1; a >= 0; a--)
-		cout << tab[a];
+	for (int j = i - 1; j >= 0; j--)
+		cout << tab[j];
 		cout << "\n";
 
 }
 
-
+void a23()
+{
+	system("cls");
+	int money;
+	cout << "Podaj kwote: \n";
+	cin >> money;
+	
+	int i, tab[9] ={ "1", "2", "5", "10", "20", "50", "100", "200", "500" };
+}
 
 
 
@@ -190,9 +198,6 @@ void doSelectedTask(int selectedOption)
 		 break;
 	 case 7:
 		 FromNumberToBinnar();
-		 break;
-	 case 8:
-		 
 		 break;
      case 0:
 		return;
