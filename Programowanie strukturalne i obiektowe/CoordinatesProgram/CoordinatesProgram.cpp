@@ -55,3 +55,25 @@ void CoordinateTestVersion1()
 	double distance = calculateDistance(x, y);
 	cout << "Odleglosc to:  " << distance << '\n';
 }
+
+string name;
+string surname;
+int age;
+int height;
+
+struct Person
+{
+	string name;
+	string surname;
+	int age;
+    int height;
+};
+Person p1;
+//p1.name
+string nameTab[5];
+string surnameTab[5];
+int ageTab[5];
+int heightTab[5];
+
+Person pTab[5];
+//pTab[2].name = "Ala";
