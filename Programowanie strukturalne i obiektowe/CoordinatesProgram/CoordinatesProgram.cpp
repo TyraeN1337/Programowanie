@@ -70,6 +70,7 @@ struct Person
 };
 Person p1;
 //p1.name
+//p1.coordinate.x=5;
 string nameTab[5];
 string surnameTab[5];
 int ageTab[5];
