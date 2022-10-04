@@ -8,7 +8,7 @@ struct Point
 	int y;
 	int z;
 };
-void CoordinateTestVersion1()
+void CoordinateTestVersion2()
 {
 	system("cls");
 	
@@ -26,14 +26,22 @@ void CoordinateTestVersion1()
 }
 double calculateDistance(int a, int b)
 {
-	return sqrt(a * a + b * b);
+
+	double distance = sqrt(a * a + b * b);
+	return distance;
+}
+double calculateDistance(Point p)
+{
+
+	double distance = sqrt(p.x * p.x + p.y * p.y);
+	return distance;
 }
 int main()
 {
 	CoordinateTestVersion2();
 }
 
-void CoordinateTestVersion2()
+void CoordinateTestVersion1()
 {
 	system("cls");
 	int x, y;
