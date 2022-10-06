@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace  std;
 
+
 struct Point
 {
 	int x;
@@ -56,6 +57,8 @@ void CoordinateTestVersion1()
 	cout << "Odleglosc to:  " << distance << '\n';
 }
 
+
+/*
 string name;
 string surname;
 int age;
@@ -78,3 +81,4 @@ int heightTab[5];
 
 Person pTab[5];
 //pTab[2].name = "Ala";
+*/
