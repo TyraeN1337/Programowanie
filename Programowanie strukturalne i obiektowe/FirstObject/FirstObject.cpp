@@ -23,7 +23,7 @@ class Point
 		y = a;
 	}
  protected:
-	 a;
+	 
  private:
 };
 
