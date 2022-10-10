@@ -12,6 +12,16 @@ class Point
 		double distance = sqrt(x * x + y * y);
 		return distance;
 	}
+	void SetX(int a)
+	{
+		if (a >= 0);
+		 x = a;
+	}
+	void SetY(int a)
+	{
+		if (a >= 0);
+		y = a;
+	}
  protected:
 
  private:
