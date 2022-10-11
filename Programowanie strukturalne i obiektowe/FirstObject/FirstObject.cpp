@@ -4,8 +4,16 @@ using namespace std;
 class Point
 {
  public:
-	int x;
-	int y;
+	 Point()
+	 {
+		 int x;
+		 int y;
+	 }
+	 Point(int x,int y)
+	 {
+		this->x;
+		 this->y;
+	 }
 	double calculateDistance(Point p)
 	{
 
@@ -25,6 +33,8 @@ class Point
  protected:
 	 
  private:
+	 int x;
+	 int y;
 };
 
 int main()

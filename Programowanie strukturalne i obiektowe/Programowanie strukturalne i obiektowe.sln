@@ -57,6 +57,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10.  Obiekty", "10.  Obiekt
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FirstObject", "FirstObject\FirstObject.vcxproj", "{861738C5-FCDF-4950-B604-D3D998F5698B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DrivingCar", "DrivingCar\DrivingCar.vcxproj", "{FC284EDC-E587-4E75-9A3E-F0149B3D9E02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -192,6 +194,14 @@ Global
 		{861738C5-FCDF-4950-B604-D3D998F5698B}.Release|x64.Build.0 = Release|x64
 		{861738C5-FCDF-4950-B604-D3D998F5698B}.Release|x86.ActiveCfg = Release|Win32
 		{861738C5-FCDF-4950-B604-D3D998F5698B}.Release|x86.Build.0 = Release|Win32
+		{FC284EDC-E587-4E75-9A3E-F0149B3D9E02}.Debug|x64.ActiveCfg = Debug|x64
+		{FC284EDC-E587-4E75-9A3E-F0149B3D9E02}.Debug|x64.Build.0 = Debug|x64
+		{FC284EDC-E587-4E75-9A3E-F0149B3D9E02}.Debug|x86.ActiveCfg = Debug|Win32
+		{FC284EDC-E587-4E75-9A3E-F0149B3D9E02}.Debug|x86.Build.0 = Debug|Win32
+		{FC284EDC-E587-4E75-9A3E-F0149B3D9E02}.Release|x64.ActiveCfg = Release|x64
+		{FC284EDC-E587-4E75-9A3E-F0149B3D9E02}.Release|x64.Build.0 = Release|x64
+		{FC284EDC-E587-4E75-9A3E-F0149B3D9E02}.Release|x86.ActiveCfg = Release|Win32
+		{FC284EDC-E587-4E75-9A3E-F0149B3D9E02}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -213,6 +223,7 @@ Global
 		{4F0DFD75-7003-474E-BD0D-3F9B3F901EC9} = {79FBA585-27CC-442F-9A72-3B5DA9F62D42}
 		{39D0012E-E74B-4104-B150-76E222121B38} = {7DF58FBB-3EB8-4922-BC32-09967BBD070B}
 		{861738C5-FCDF-4950-B604-D3D998F5698B} = {3C37DF45-35E0-46A6-A4FE-E21C15DF734F}
+		{FC284EDC-E587-4E75-9A3E-F0149B3D9E02} = {3C37DF45-35E0-46A6-A4FE-E21C15DF734F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {76EC34DF-6BC3-4283-8128-050FEAB28534}
