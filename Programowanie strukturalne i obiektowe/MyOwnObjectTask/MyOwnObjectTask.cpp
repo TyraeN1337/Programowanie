@@ -8,33 +8,25 @@ using namespace std;
   -dodac 5 pol opisujacych osobe (ma byc rok urodzenia)
 
 */
+int CurrentTime()
+{
+	time_t now = time(0);
+	tm* ltm = new tm;
+	localtime_s(ltm, &now);
+	return 1900 + ltm->tm_year; 
+}
 class Person
 {
 	
 public:
 	
-	/*Person(string name, string identifier, int BirthYear, int CurrentYear)
-	{
-		
-		 
-		this->name = name;
-		this->indentifier = identifier;
-		time_t now = time(0);
-		tm* ltm = new tm;
-		localtime_s(ltm, &now);
-		BirthYear = 1900 + ltm->tm_year;
-		CurrentYear = 1900 + ltm->tm_year;
-		if (CurrentYear - BirthYear >= 18)
-			Is18 = true;
-		else
-			Is18 = false;
-	}
-	*/
+	
 	Person(string name, string surname, string height,string weight, string sex, string city)
 	{
 		this->name = name;
 		this->surname = surname;
 		this->height = height;
+		this->date = 2009;
 		this->weight = weight;
 		this->sex = sex;
 		this->city = city;
@@ -46,12 +38,19 @@ public:
 		cout << "************************************************" << endl;
 		cout << "Imie i Nazwisko  " << name << " " << surname << endl;
 		cout << "Wysokoœæ " << height << endl;
+		cout << "Urodziny  " << date << endl;
 		cout << "Waga " << weight << endl;
 		cout << "P³eæ " << sex << endl;
 		cout << "Miasto " << city << endl;
-		cout << "************************************************" << endl;
+		
 	}
-	
+	void Legalage()
+	{
+		if (date >= 18)
+			cout << " not 18 " << endl;
+		else
+			cout << " not 18 " << endl;
+	}
 
 protected:
 
@@ -59,21 +58,68 @@ private:
 	string name;
 	string indentifier;
 	string surname;
-	string height; 
+	string height;
+	int date;
 	string weight;
 	string sex;
 	string city;
-	bool Is18;
+   
+
+
 }
 ;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
+;;
+;
+;
+;;
+;
+;
+
 int main()
 {
+	time_t now = time(0);
+	tm* ltm = new tm;
+	localtime_s(ltm, &now);
+	int date;
+	date = 1900 + ltm->tm_year;
+	
 	setlocale(LC_CTYPE, "polish");
 	Person personFirst("Jajam" , "Iomate", "178cm", "80", "m","Floryda");
 	personFirst.ShowInfo();
-
+	personFirst.Legalage();
+	cout << "************************************************" << endl;
 	/*time_t now = time(0);
 
 	std::cout << "Number of second since January 1,1970 is:: "
