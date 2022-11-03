@@ -62,7 +62,7 @@ private:
 	int date;
 	string weight;
 	string sex;
-	string city;
+	string city;    
    
 
 
