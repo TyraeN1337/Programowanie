@@ -8,6 +8,6 @@ namespace ShapeConsoleApp.Shapes
 {
     class Trapeze
     {
-
+        int tak;
     }
 }
