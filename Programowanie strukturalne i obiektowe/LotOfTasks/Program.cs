@@ -70,7 +70,7 @@ namespace LotOfTasks
             //exercise.Exercise5();
             //exercise.Exercise6();
             //exercise.Exercise7();
-            //exercise.Exercise8();
+            exercise.Exercise8();
             exercise.Exercise9();
 
 
