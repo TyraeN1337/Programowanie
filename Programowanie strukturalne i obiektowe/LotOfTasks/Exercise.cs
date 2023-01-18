@@ -107,15 +107,18 @@ namespace LotOfTasks
         public void Exercise9()
         {
             Console.WriteLine("Podaj liczbę wagi1:");
-            float w1= int.Parse(Console.ReadLine());
+            double w1= int.Parse(Console.ReadLine());
             Console.WriteLine("Podaj liczbę  wagi2:");
-            float w2 = int.Parse(Console.ReadLine());
+            double w2 = int.Parse(Console.ReadLine());
             Console.WriteLine("Podaj liczbę wagi3:");
-            float w3 = int.Parse(Console.ReadLine());
-
-       
+            double w3 = int.Parse(Console.ReadLine());
+            double srednia;
+            
             w2 = w2 * w2;
             w3 = w3 * w3 * w3;
+            srednia = (w1 + w2 + w3) / w1 + w2 + w3;
+            Console.WriteLine("Srednia warzona: " + srednia);
+            Console.WriteLine();
         }
 
     }
