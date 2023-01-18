@@ -63,7 +63,7 @@ namespace LotOfTasks
         static void Main(string[] args)
         {
             Exercise exercise = new Exercise();
-            //exercise.Exercise1();
+            exercise.Exercise1();
             //exercise.Exercise2();
             //exercise.Exercise3();
             //exercise.Exercise4();
