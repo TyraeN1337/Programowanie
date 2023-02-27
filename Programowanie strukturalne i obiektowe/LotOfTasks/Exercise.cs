@@ -120,6 +120,29 @@ namespace LotOfTasks
             Console.WriteLine("Srednia warzona: " + srednia);
             Console.WriteLine();
         }
+        public void BetterExercise9()
+        {
+            Console.Write("Podaj ilosc ocen");
+            int gradesCount = int.Parse(Console.ReadLine());
+
+            double gradesSum = 0, weightSum = 0;
+            for (int i = 0; i < gradesCount; i++) {
+                Console.Write("Podaj ocene: ");
+                gradesSum += double.Parse(Console.ReadLine());
+                
+
+                Console.Write("Podaj wage oceny: ");
+                weightSum += double.Parse(Console.ReadLine());
+
+                Console.Clear();
+            }
+            Console.WriteLine($"Srednia tych ocen to: {gradesSum/weightSum}");
+        }
+        public void Exercise1_1()
+        {
+
+        }
+
 
     }
 }
