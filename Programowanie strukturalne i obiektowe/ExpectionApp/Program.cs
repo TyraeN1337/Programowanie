@@ -17,9 +17,9 @@ namespace ExpectionApp
 
                 Console.WriteLine("Wynik dzielenia " + divNumber);
             }   
-            catch(Expection ex)
+            catch( Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
         }
     }
