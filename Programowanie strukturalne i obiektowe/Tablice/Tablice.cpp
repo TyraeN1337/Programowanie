@@ -404,3 +404,4 @@ void Szablon()
 
 	//Tutaj umieszczamy algorytm dla zadania
 }
+

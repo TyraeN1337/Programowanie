@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolApp.database.Entities
+namespace SchoolApp.Database.Entities
 {
+
     class SchoolClass
     {
         public int Id { get; set; }
