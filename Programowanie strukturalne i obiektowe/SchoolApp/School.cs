@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore;
 using SchoolApp;
 using SchoolApp.Database;
 using SchoolApp.Database.Entities;
@@ -21,7 +22,7 @@ namespace SchoolApp
                 Console.WriteLine("Wybierz: ");
                 if (!int.TryParse(Console.ReadLine(), out int option))
                     continue;
-                switch(option)
+                switch (option)
                 {
                     case 1:
                         AddNewSchoolClasses();
@@ -37,27 +38,52 @@ namespace SchoolApp
                     case 4:
                         ShowEm();
                         break;
+                    case 5:
+                        AddNewStudent();
+                        break;
+                    case 6:
+                        DeleteStudent();
+                        break;
+                    case 7:
+                        ModifyStudent();
+                        break;
+                    case 8:
+                        ShowAllStudents();
+                        break;
+                    case 9:
+                        ShowAllStudentWithClass();
+                        break;
+                    case 10:
+                        ShowAllStudentsOrderBySurname();
+                        break;
 
                     case 0:
                         return;
 
-                        
+
                 }
 
             }
-    
+
         }
         public void ShowMenu()
         {
             Console.Clear();
-            Console.WriteLine(" Lista dostępnych opcji: "  );
-            Console.WriteLine("1. Dodanie nowej klasy ");
-            Console.WriteLine("2. Usunięcie klasy ");
-            Console.WriteLine("3. Modyfikacja klasy ");
-            Console.WriteLine("4. Wyświetlenie wszystkich klas ");
+            Console.WriteLine("Lista dostepnych opcji:");
+            //CRUD
+            Console.WriteLine("1. Dodanie nowej klasy."); //C - create
+            Console.WriteLine("2. Usunięcie klasy.");   //D - delete
+            Console.WriteLine("3. Modyfikacja klasy."); //U - update
+            Console.WriteLine("4. Wyświetlenie wszystkich klas."); //R - read
 
-            Console.WriteLine("0. Koniec Programu");
+            Console.WriteLine("5. Dodanie nowego ucznia");
+            Console.WriteLine("8. Wyświetlenie wszystkich uczniów");
+            Console.WriteLine("9. Wyświetlenie szystkich uczniów z informacją o klasie");
+            Console.WriteLine("10. Wyświetlenie wszystkich uczniów posortowanych po nazwiskach");
+            Console.WriteLine("11. Wyświetlenie uczniów z warunkami");
+            Console.WriteLine("0. Koniec programu.");
         }
+
         #region Metody do pracy na tabeli SchoolClasses
         private void AddNewSchoolClasses()
         {
@@ -76,7 +102,7 @@ namespace SchoolApp
         {
             Console.WriteLine("Wszystkie klasy: ");
 
-            foreach(SchoolClass schoolClass in schooldatabase.SchoolClasses)
+            foreach (SchoolClass schoolClass in schooldatabase.SchoolClasses)
             {
                 Console.WriteLine(schoolClass.Id + " " + schoolClass.Name);
             }
@@ -87,9 +113,9 @@ namespace SchoolApp
             Console.WriteLine("Podaj Id klasy do usuniecia: ");
             if (int.TryParse(Console.ReadLine(), out int idDelete))
             {
-                SchoolClass schoolClassToDelete = schooldatabase.SchoolClasses.FirstOrDefault(sc => sc.Id == idDelete); 
+                SchoolClass schoolClassToDelete = schooldatabase.SchoolClasses.FirstOrDefault(sc => sc.Id == idDelete);
 
-                if(schoolClassToDelete != null)
+                if (schoolClassToDelete != null)
                 {
                     schooldatabase.SchoolClasses.Remove(schoolClassToDelete);
                     schooldatabase.SaveChanges();
@@ -127,5 +153,125 @@ namespace SchoolApp
             }
         }
         #endregion
+
+        #region Metody do pracy na tabeli Students
+
+        private void AddNewStudent()
+        {
+            Console.WriteLine("Podaj imię:");
+            string name = Console.ReadLine();
+            Console.WriteLine("Podaj nazwisko:");
+            string surname = Console.ReadLine();
+            Console.WriteLine("Podaj id klasy:");
+            int schoolClassId = int.Parse(Console.ReadLine());
+
+            Student student = new Student()
+            {
+                Name = name,
+                Surname = surname,
+                SchoolClassId = schoolClassId
+            };
+            schooldatabase.Students.Add(student);
+            schooldatabase.SaveChanges();
+            Console.WriteLine("Dodano studenta");
+            Console.ReadKey();
+
+        }
+
+        private void ShowAllStudents()
+        {
+            /*
+             select *
+               from Students
+             */
+            Console.WriteLine("Lista uczniów");
+
+            foreach (Student student in schooldatabase.Students)
+            {
+                Console.WriteLine("Id: " + student.Id);
+                Console.WriteLine("Imię: " + student.Name);
+                Console.WriteLine("Nazwisko: " + student.Surname);
+            }
+            Console.ReadKey();
+        }
+
+        private void ShowAllStudentWithClass()
+        {
+
+            Console.WriteLine("Lista uczniów");
+
+            foreach (Student student in schooldatabase.Students.Include(s => s.SchoolClass))
+            {
+                Console.WriteLine("Id: " + student.Id);
+                Console.WriteLine("Imię: " + student.Name);
+                Console.WriteLine("Nazwisko: " + student.Surname);
+                Console.WriteLine("Nazwa klasy: " + student.SchoolClass.Name);
+            }
+            Console.ReadKey();
+        }
+        private void DeleteStudent()
+        {
+            Console.WriteLine("Podaj Id ucznia do usuniecia: ");
+            int studentId = int.Parse(Console.ReadLine());
+
+            Student StudentToDelete = schooldatabase.Students.FirstOrDefault(s => s.Id == studentId);
+
+            if (StudentToDelete != null)
+            {
+                schooldatabase.Students.Remove(StudentToDelete);
+                schooldatabase.SaveChanges();
+            }
+            else
+            {
+                Console.WriteLine("Brak ucznia w bazie");
+            }
+            Console.ReadKey();
+        }
+        private void ModifyStudent()
+        {
+            Console.WriteLine("Podaj Id ucznia do modyfikacji: ");
+            int studentId = int.Parse(Console.ReadLine());
+
+            Student StudentToModify = schooldatabase.Students.FirstOrDefault(s => s.Id == studentId);
+
+            if (StudentToModify != null)
+            {
+                Console.WriteLine("Podaj nowe imie:");
+                StudentToModify.Name = Console.ReadLine();
+                Console.WriteLine("Podaj nowe nazwisko: ");
+                StudentToModify.Surname = Console.ReadLine();
+                schooldatabase.SaveChanges();
+            }
+            else
+            {
+                Console.WriteLine("Brak ucznia w bazie");
+            }
+            Console.ReadKey();
+        }
+        private void ShowAllStudentsOrderBySurname()
+        {
+            /*
+             select *
+               from Students
+             */
+            Console.WriteLine("Lista uczniów");
+
+            foreach (Student student in schooldatabase.Students.OrderBy(s => s.Surname).ThenByDescending(s => s.Name))
+            {
+                Console.WriteLine("Id: " + student.Id);
+                Console.WriteLine("Imię: " + student.Name);
+                Console.WriteLine("Nazwisko: " + student.Surname);
+            }
+            Console.ReadKey();
+
+
+        }
+        private void shwa()
+        {
+             
+        }
     }
+    #endregion
 }
+
+
