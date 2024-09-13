@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleCalculatorMuaiApp.MainPage">
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" Background="Purple">
+            <Label Text="First Number: "
+                   TextColor="White"
+                   FontSize="40"
+                   VerticalOptions="Center"/>
+            <Entry HorizontalOptions="FillAndExpand" x:Name="numberOEntry" TextColor="White"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Background="Purple">
+            <Label Text="Second Number: "
+                TextColor="White"
+                FontSize="40"
+                VerticalOptions="Center"/>
+            <Entry HorizontalOptions="FillAndExpand" x:Name="numberSEntry" TextColor="White"/>
+        </StackLayout>
+        <Label Text="Operacja do wykonania: "/>
+
+        <RadioButton Content="+" x:Name="operationA"/>
+        <RadioButton Content="-" x:Name="operationL"/>
+        <RadioButton Content="*" x:Name="operationM"/>
+        <RadioButton Content="/" x:Name="operationD"/>
+        <Button Text="Oblicz" HorizontalOptions="Center" Clicked="Button_Clicked"/>
+        <Label x:Name="resultlabel" FontSize="30"/>
+
+    </StackLayout>
+</ContentPage>
