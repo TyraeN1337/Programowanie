@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BindingMauiApp.MainPage"
+             x:Name="thisPage">
+    <StackLayout>
+        <Slider Minimum="0"
+                Maximum="360"
+                MinimumTrackColor="Aqua"
+                MaximumTrackColor="Purple"
+                ThumbColor="Azure"
+                ValueChanged="Slider_ValueChanged"
+                x:Name="rotationSlider"/>
+        
+        <Label Text="{Binding Source={x:Reference rotationSlider},Path=Value}"
+               FontSize="{Binding Source={x:Reference rotationSlider},Path=Value}"/>
+        
+        
+        <Label Text="Podaj wartość: "/>
+        <Entry Text="{Binding Message, Source={x:Reference thisPage}}"/>
+        <Button Text="Wykonaj"
+                Clicked="Button_Clicked"/>
+        <Label Text="{Binding Path=ReturnMessage}"/>
+        
+        
+        <Label Text="To jest label"
+               VerticalOptions="EndAndExpand"
+               HorizontalOptions="Center"
+               Margin="0,0, 0, 50"
+               x:Name="rotationLabel"
+               />
+    </StackLayout>
+
+</ContentPage>
