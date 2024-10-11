@@ -26,6 +26,6 @@
         <RadioButton Content="*" IsChecked="{Binding IsoperationM}"/>
         <RadioButton Content="/" IsChecked="{Binding IsoperationD}"/>
         <Button Text="Oblicz" HorizontalOptions="Center" Clicked="Button_Clicked"/>
-        <Label x:Name="resultlabel" FontSize="30"/>
+        <Label Text="{Binding ResultMessage}" TextColor="{Binding ColorMessage}" FontSize="30"/>
     </StackLayout>
 </ContentPage>

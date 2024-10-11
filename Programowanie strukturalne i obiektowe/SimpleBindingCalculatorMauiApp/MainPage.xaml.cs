@@ -9,6 +9,19 @@
         public bool IsoperationL { get; set; }
         public bool IsoperationM { get; set; }
         public bool IsoperationD { get; set; }
+
+        public string resultMessage;
+        public string ResultMessage
+        {
+            get { return resultMessage; }
+            set { resultMessage = value; OnPropertyChanged(); }
+        }
+        private Color colorMessage;
+        public Color ColorMessage
+        {
+            get { return colorMessage; }
+            set { colorMessage = value; OnPropertyChanged(); }
+        }
         public MainPage()
         {
             InitializeComponent();
@@ -20,14 +33,14 @@
             int result = 0;
             if (!int.TryParse(FirstNumber, out firstnumber))
             {
-                resultlabel.Text = "Niepoprawna pierwsza liczba";
-                resultlabel.TextColor = Colors.Red;
+                ResultMessage = "Niepoprawna pierwsza liczba";
+                ColorMessage = Colors.Red;
                 return;
             }
             if (!int.TryParse(SecondNumber, out int secondnumber))
             {
-                resultlabel.Text = "Niepoprawna druga liczba";
-                resultlabel.TextColor = Colors.Red;
+                ResultMessage = "Niepoprawna druga liczba";
+                ColorMessage = Colors.Red;
                 return;
             }
             else if (IsoperationA)
@@ -46,8 +59,8 @@
             {
                 result = firstnumber / secondnumber;
             }
-            resultlabel.Text = $"Wynik operacji: {result}";
-            resultlabel.TextColor = Colors.Navy;
+            ResultMessage = $"Wynik operacji: {result}";
+            ColorMessage = Colors.Navy;
         }
     }
 }
