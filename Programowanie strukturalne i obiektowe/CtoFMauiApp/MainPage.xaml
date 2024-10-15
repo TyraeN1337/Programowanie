@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel ="clr-namespace:CtoFMauiApp" 
+             x:Class="CtoFMauiApp.MainPage">
+    <ContentPage.BindingContext>
+        <viewModel:CeltoFar/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Label>
+            <Label.Text>Wybierz:</Label.Text>
+        </Label>
+        <Picker ItemsSource="{Binding Collection}"
+        SelectedItem="{Binding Selected}"></Picker>
+        <Label>
+            <Label.Text>Wprowadź:</Label.Text>
+        </Label>
+        <Entry Text="{Binding Liczba}"></Entry>
+        <Button Text="Przelicz" Command="{Binding CalculateCommand}"></Button>
+        <Label Text="{Binding ResultMessage}" TextColor="{Binding ColorMessage}" FontSize="30"/>
+    </StackLayout>
+
+
+</ContentPage>
