@@ -1,0 +1,29 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:ProjectMauiApp"
+             x:Class="ProjectMauiApp.MainPage">
+    <ContentPage.BindingContext>
+        <viewModel:Throw/>
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout BackgroundColor="Beige">
+        <Label Text="Gra w Kości. Autor 00000000" TextColor="White" BackgroundColor="Brown" FontSize="50"/>
+        <Button BackgroundColor="Chocolate" Text="RZUĆ KOŚĆMI" HorizontalOptions="Center" FontSize="25" Margin="15" Command="{Binding LosCommand}"/>
+        <StackLayout 
+            Orientation="Horizontal"
+            HorizontalOptions="Center"
+            HeightRequest="100"
+            BackgroundColor="White"
+            Margin="10">
+        <Image Source="question.jpg" Margin="9" BindingContext="{Binding Cube}" Command ="{Binding ChangeCommand}"/>
+        <Image Source="question.jpg" Margin="9" BindingContext="{Binding Cube}" Command ="{Binding ChangeCommand}"/>
+        <Image Source="question.jpg" Margin="9" BindingContext="{Binding Cube}" Command ="{Binding ChangeCommand}"/>
+        <Image Source="question.jpg" Margin="9" BindingContext="{Binding Cube}" Command ="{Binding ChangeCommand}"/>
+        <Image Source="question.jpg" Margin="9" BindingContext="{Binding Cube}" Command ="{Binding ChangeCommand}"/>
+        <Image Source="question.jpg" Margin="9" BindingContext="{Binding Cube}" Command ="{Binding ChangeCommand}"/>
+        </StackLayout>
+        <Label Text="{Binding ResultMessage1}" HorizontalOptions="Center"/>
+        <Label Text="{Binding ResultMessage2}" HorizontalOptions="Center"/>
+        <Button BackgroundColor="Chocolate" Text="RESETUJ WYNIK" HorizontalOptions="Center" FontSize="25" Margin="15" Command="{Binding ResetCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>
